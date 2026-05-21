@@ -1,4 +1,4 @@
-
+# LAB3_GEMS_CPP
 ## Библиотека
 Для игры использовалась библиотека SFML.
 Скачивала с https://github.com/SFML/SFML/releases/tag/2.6.1 (Assets -> SFML-2.6.1-windows-vc17-64-bit.zip) (также можно скачать с официального сайта, но у меня не грузился zip оттуда).
