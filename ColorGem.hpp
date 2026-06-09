@@ -7,9 +7,5 @@ public:
 
     bool isBonus() const override { return true; }
 
-    void draw(sf::RenderWindow& window,
-        const sf::Color colors[],
-        int cellSize,
-        float offsetX,
-        float offsetY) override;
+    void draw(sf::RenderWindow& window, const sf::Color colors[], int cellSize, float offsetX, float offsetY);
 };
