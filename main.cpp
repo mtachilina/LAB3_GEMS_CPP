@@ -1,8 +1,8 @@
-﻿#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "Board.hpp"
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(400, 400), "GEMS");
+    sf::RenderWindow window(sf::VideoMode(GameConfig::WINDOW_SIZE, GameConfig::WINDOW_SIZE), "GEMS");
 
     Board board;
 
@@ -10,14 +10,10 @@ int main() {
         sf::Event event;
 
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
+            if (event.type == sf::Event::Closed)
                 window.close();
-                continue;
-            }
 
-            if (event.type == sf::Event::MouseButtonPressed &&
-                event.mouseButton.button == sf::Mouse::Left) {
-
+            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
                 board.handleClick(event.mouseButton.x, event.mouseButton.y);
             }
         }
@@ -26,6 +22,5 @@ int main() {
         board.draw(window);
         window.display();
     }
-
     return 0;
 }
