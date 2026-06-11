@@ -90,17 +90,8 @@ void Board::separateCells(const std::set<Pos>& matches,
 
 void Board::activateBonus(int i, int j) {
     if (!grid[i][j]) return;
-
-    int savedColor = grid[i][j]->getColor();
-
-    if (dynamic_cast<BombGem*>(grid[i][j].get())) {
-        grid[i][j].reset();
-        activateBomb(i, j);
-    }
-    else if (dynamic_cast<ColorGem*>(grid[i][j].get())) {
-        grid[i][j].reset();
-        activateColor(i, j, savedColor);
-    }
+    grid[i][j]->activate(*this, i, j);
+    grid[i][j].reset();
 }
 
 void Board::applyMatches(const std::set<Pos>& matches) {
