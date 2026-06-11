@@ -1,14 +1,12 @@
-#include "ColorGem.hpp"
+#pragma once
+#include "Gem.hpp"
 
-void ColorGem::draw(sf::RenderWindow& window, const sf::Color colors[], int cellSize, float offsetX, float offsetY) {
+class ColorGem : public Gem {
+public:
+    using Gem::Gem;
 
-    sf::RectangleShape shape(sf::Vector2f(cellSize - 2.f, cellSize - 2.f));
-    shape.setPosition(offsetX, offsetY);
-    shape.setFillColor(colors[color]);
-    window.draw(shape);
+    bool isBonus() const override { return true; }
+    void activate(Board& board, int i, int j) override;
 
-    sf::CircleShape dot(cellSize / 4.f);
-    dot.setPosition(offsetX + cellSize / 4.f, offsetY + cellSize / 4.f);
-    dot.setFillColor(sf::Color::White);
-    window.draw(dot);
-}
+    void draw(sf::RenderWindow& window, const sf::Color colors[], int cellSize, float offsetX, float offsetY);
+};
