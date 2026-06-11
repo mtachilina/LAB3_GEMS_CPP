@@ -6,7 +6,7 @@ public:
     using Gem::Gem;
 
     bool isBonus() const override { return true; }
-    void activate(Board& board, int i, int j);
+    void activate(Board& board, int i, int j) override;
 
     void draw(sf::RenderWindow& window,
         const sf::Color colors[],
