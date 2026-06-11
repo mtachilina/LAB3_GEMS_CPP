@@ -1,4 +1,9 @@
 #include "BombGem.hpp"
+#include "Board.hpp"
+
+void BombGem::activate(Board& board, int i, int j) {
+    board.activateBomb(i, j);
+}
 
 void BombGem::draw(sf::RenderWindow& window, const sf::Color colors[], int cellSize, float offsetX, float offsetY) {
 
