@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+class Board;
+
 class Gem {
 protected:
     int color;
@@ -13,6 +15,7 @@ public:
     virtual void draw(sf::RenderWindow& window, const sf::Color colors[], int cellSize, float offsetX, float offsetY) = 0;
 
     virtual bool isBonus() const { return false; }
+    virtual void activate(class Board& board, int i, int j);
 
     int getColor() const;
     void setColor(int c);
