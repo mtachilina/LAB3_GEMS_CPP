@@ -24,9 +24,7 @@ private:
     int dist(int i1, int j1, int i2, int j2);
     bool canVisit(int i, int j, int color, bool visited[GameConfig::GRID_SIZE][GameConfig::GRID_SIZE]);
 
-    void dfs(int i, int j, int color,
-        bool visited[GameConfig::GRID_SIZE][GameConfig::GRID_SIZE],
-        std::vector<Pos>& group);
+    void dfs(int i, int j, int color, bool visited[GameConfig::GRID_SIZE][GameConfig::GRID_SIZE], std::vector<Pos>& group);
     void processGroup(std::vector<Pos>& group, std::set<Pos>& result);
     std::set<Pos> findAllMatches();
 
@@ -58,4 +56,6 @@ public:
     Board();
     void draw(sf::RenderWindow& window);
     void handleClick(int x, int y);
+    void activateBomb(int i, int j);
+    void activateColor(int i, int j, int sourceColor);
 };
