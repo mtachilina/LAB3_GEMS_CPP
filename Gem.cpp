@@ -2,6 +2,8 @@
 
 Gem::Gem(int c, int px, int py) : color(c), x(px), y(py) {}
 
+void Gem::activate(Board& board, int i, int j) {}
+
 int Gem::getColor() const { return color; }
 void Gem::setColor(int c) { color = c; }
 
